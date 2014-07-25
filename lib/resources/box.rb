@@ -56,6 +56,10 @@ module StreakClient
         {name: name, notes: notes, stageKey: stageKey}.to_json, content_type: :json)
     end
 
+    def add_filter(attributes)
+      Filter.create(attributes)
+    end
+
     def add_comment(message)
       response = MultiJson.load(
         RestClient.put(Box.instance_api_url(boxKey) + "/comments", "message=#{message}"))
