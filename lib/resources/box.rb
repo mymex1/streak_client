@@ -2,6 +2,7 @@ module StreakClient
   
   class Box
 
+   ASSOCIATIONS = [:filters]
     attr_accessor :name, :notes, :stageKey, :fields, 
       :followerKeys, :boxKey
 
