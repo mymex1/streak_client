@@ -58,6 +58,7 @@ module StreakClient
     end
 
     def add_filter(attributes)
+      attributes["boxKey"] = boxKey
       Filter.create(attributes)
     end
 
