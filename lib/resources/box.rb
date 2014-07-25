@@ -52,9 +52,8 @@ module StreakClient
       response.map {|thread_attributes| Thread.new(thread_attributes) }
     end
 
-    def add_thread(thread_id, subject)
-      jsonString = "{'subject':'" + subject + "','gmailThreadId':'"+ thread_id +"'}"
-      response = MultiJson.load(RestClient.put(Box.instance_api_url(boxKey) + "/threads", "json=["+jsonString + "]"))
+    def add_thread(thread)
+      response = MultiJson.load(RestClient.put(Box.instance_api_url(boxKey) + "/threads", thread))
     end
 
     def save!
