@@ -53,7 +53,7 @@ module StreakClient
     end
 
     def add_thread(attributes)
-      response = MultiJson.load(RestClient.put(Box.instance_api_url(boxKey) + "/threads", attributes))
+      response = MultiJson.load(RestClient.put(Box.instance_api_url(boxKey) + "/threads", :json=> attributes))
     end
 
     def save!
